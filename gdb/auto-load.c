@@ -499,6 +499,10 @@ file_is_auto_load_safe (const char *filename, const char *debug_fmt, ...)
   if (!advice_printed)
     {
       const char *homedir = getenv ("HOME");
+#ifdef _WIN32
+      if (homedir == NULL)
+        homedir = getenv ("USERPROFILE");
+#endif
 
       if (homedir == NULL)
 	homedir = "$HOME";

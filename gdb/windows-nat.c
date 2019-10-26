@@ -3439,6 +3439,10 @@ _initialize_check_for_gdb_ini ()
     return;
 
   homedir = getenv ("HOME");
+#ifdef _WIN32
+  if (homedir == NULL)
+    homedir = getenv ("USERPROFILE");
+#endif
   if (homedir)
     {
       char *p;
