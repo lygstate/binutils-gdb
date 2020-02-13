@@ -118,15 +118,15 @@ struct tui_translate
    The list of values must be terminated by a NULL.
    After the NULL value, an entry defines the default.  */
 static struct tui_translate tui_border_mode_translate[] = {
-  { "normal",		A_NORMAL },
-  { "standout",		A_STANDOUT },
-  { "reverse",		A_REVERSE },
-  { "half",		A_DIM },
-  { "half-standout",	A_DIM | A_STANDOUT },
-  { "bold",		A_BOLD },
-  { "bold-standout",	A_BOLD | A_STANDOUT },
+  { "normal",		(int)A_NORMAL },
+  { "standout",		(int)A_STANDOUT },
+  { "reverse",		(int)A_REVERSE },
+  { "half",		(int)A_DIM },
+  { "half-standout",	(int)(A_DIM | A_STANDOUT) },
+  { "bold",		(int)A_BOLD },
+  { "bold-standout",	(int)(A_BOLD | A_STANDOUT) },
   { 0, 0 },
-  { "normal",		A_NORMAL }
+  { "normal",		(int)A_NORMAL }
 };
 
 /* Translation tables for border-kind, one for each border
