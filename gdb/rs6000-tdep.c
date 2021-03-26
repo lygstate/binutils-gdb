@@ -3364,6 +3364,14 @@ static struct ppc_variant variants[] =
   {"e500", "Motorola PowerPC e500", bfd_arch_powerpc,
    bfd_mach_ppc_e500, &tdesc_powerpc_e500},
 
+  // TODO: What's e500mc should be
+  {"e500mc", "Freescale PowerPC e500mc", bfd_arch_powerpc,
+   bfd_mach_ppc_e500mc, &tdesc_powerpc_e500},
+
+  // TOOD: Check e6500 support
+  {"e6500", "Freescale PowerPC e6500", bfd_arch_powerpc,
+   bfd_mach_ppc_e6500, &tdesc_powerpc_64},
+
   /* 64-bit */
   {"powerpc64", "PowerPC 64-bit user-level", bfd_arch_powerpc,
    bfd_mach_ppc64, &tdesc_powerpc_altivec64},
@@ -6725,6 +6733,7 @@ rs6000_gdbarch_init (struct gdbarch_info info, struct gdbarch_list *arches)
      complain for a 32-bit binary on a 64-bit target; we do not yet
      support that.  For instance, the 32-bit ABI routines expect
      32-bit GPRs.
+     TODO: How to resolve this issue:
 
      As long as there isn't an explicit target description, we'll
      choose one based on the BFD architecture and get a word size
