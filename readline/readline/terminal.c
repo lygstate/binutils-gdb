@@ -103,7 +103,7 @@ static char *term_string_buffer = (char *)NULL;
 static int tcap_initialized;
 
 #if !defined (__linux__) && !defined (NCURSES_VERSION)
-#  if defined (__EMX__) || defined (NEED_EXTERN_PC)
+#  if defined (__EMX__) || defined (NEED_EXTERN_PC) || defined(__MINGW32__)
 extern 
 #  endif /* __EMX__ || NEED_EXTERN_PC */
 char PC, *BC, *UP;
