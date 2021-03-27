@@ -6741,7 +6741,7 @@ rs6000_gdbarch_init (struct gdbarch_info info, struct gdbarch_list *arches)
      powerpc:common64).  So there is only trouble if a 64-bit target
      supplies a 64-bit description while debugging a 32-bit
      binary.  */
-  if (tdesc_wordsize != -1 && tdesc_wordsize != wordsize)
+  if (tdesc_wordsize != -1 && tdesc_wordsize < wordsize)
     {
       tdesc_data_cleanup (tdesc_data);
       return NULL;
